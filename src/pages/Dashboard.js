@@ -43,13 +43,23 @@ const Dashboard = () => {
       </section>
 
       <section className="w-full mt-8">
-        <p className="font-semibold">Your Portfolio</p>
-        <div className="w-full flex items-center">
-          <div className=" md:w-1/2">
-            {portfolio && <PortfolioDonutChart data={donutChartData} />}
+        <div className="w-full flex items-center gap-12">
+          <div className="flex flex-col border rounded-md md:w-1/2">
+            <div className="p-2 border-b">
+              <p className="font-semibold">Your Portfolio</p>
+            </div>
+            <div className="flex flex-1 justify-center p-4">
+              {portfolio && <PortfolioDonutChart data={donutChartData} />}
+            </div>
           </div>
-          <div className="md:w-1/2">
-            {portfolio && <PortfolioBarChart data={barChartData} />}
+
+          <div className="flex flex-col border rounded-md md:w-1/2">
+            <div className="p-2 border-b">
+              <p className="font-semibold">Your Investments</p>
+            </div>
+            <div className="flex flex-1 justify-center p-4">
+              {portfolio && <PortfolioBarChart data={barChartData} />}
+            </div>
           </div>
         </div>
       </section>
