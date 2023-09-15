@@ -19,13 +19,13 @@ export const DashboardLayout = ({ children }) => {
   };
 
   return (
-    <main className="w-screen min-h-screen flex flex-col bg-gray-100 relative">
+    <main className="w-screen min-h-screen flex flex-col bg-white relative">
       <header className="bg-white border-b">
         <section className="flex items-center justify-between container mx-auto p-4">
           <img alt="Aumni Logo" src={aumniLogo} className="h-[24px]" />
           <button
             aria-label="Select to sign out"
-            className="bg-gray-100 p-2 rounded-md border border-gray-200 text-gray-600"
+            className="p-2 rounded-md border text-gray-600"
             onClick={handleSignOut}
           >
             <ArrowRightOnRectangleIcon className="w-4 h-4" />

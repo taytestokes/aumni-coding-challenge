@@ -16,7 +16,7 @@ export const AuthProvider = ({ users, children }) => {
    * and update the application auth state with that user
    */
   const signIn = (username, password) => {
-    const fund = users.find((fund) => fund.username === username);
+    const user = users.find((user) => user.username === username);
 
     if (!username.length) {
       throw new Error("Username can't be blank.");
@@ -26,17 +26,18 @@ export const AuthProvider = ({ users, children }) => {
       throw new Error("Password can't be blank.");
     }
 
-    if (!fund) {
+    if (!user) {
       throw new Error("Invalid username, please try again.");
     }
 
-    if (password !== fund.password) {
+    if (password !== user.password) {
       throw new Error("Invalid password, please try again.");
     }
 
     const userData = {
-      id: fund.id,
-      username: fund.username,
+      id: user.id,
+      username: user.username,
+      name: user.name,
     };
 
     window.localStorage.setItem("user", JSON.stringify(userData));

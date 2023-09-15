@@ -32,7 +32,7 @@ const Authentication = () => {
   }
 
   return (
-    <main className="w-screen min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4">
+    <main className="w-screen min-h-screen flex flex-col items-center justify-center bg-white px-4">
       <form
         className="w-full max-w-[320px] relative flex flex-col items-center"
         onSubmit={handleSubmit}

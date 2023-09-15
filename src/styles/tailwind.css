@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+* Creates custom classes
+*/
+@layer components {
+  .donut-chart .donut-arc {
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .donut-chart.highlighting .donut-arc {
+    opacity: 0.75;
+    transform: scale(0.95);
+  }
+
+  .donut-chart.highlighting .donut-arc:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

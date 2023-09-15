@@ -10,7 +10,8 @@
         "cost": 1700000,
         "ownershipPercentage": 0.34,
         "impliedValue": 5700000,
-        "founded": "2020-05-10"
+        "founded": "2020-05-10",
+        "brand": "#2563eb"
       },
       {
         "id": 2,
@@ -19,7 +20,8 @@
         "cost": 3500000,
         "ownershipPercentage": 0.12,
         "impliedValue": 10000000,
-        "founded": "2018-10-17"
+        "founded": "2018-10-17",
+        "brand": "#3b82f6"
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
         "cost": 500000,
         "ownershipPercentage": 0.05,
         "impliedValue": 1500000,
-        "founded": "2015-01-01"
+        "founded": "2015-01-01",
+        "brand": "#60a5fa"
       }
     ]
   },
@@ -43,7 +46,8 @@
         "cost": 250000,
         "ownershipPercentage": 0.12,
         "impliedValue": 2000000,
-        "founded": "2017-03-14"
+        "founded": "2017-03-14",
+        "brand": "#2563eb"
       },
       {
         "id": 5,
@@ -52,7 +56,8 @@
         "cost": 3500000,
         "ownershipPercentage": 0.35,
         "impliedValue": 10000000,
-        "founded": "2018-12-27"
+        "founded": "2018-12-27",
+        "brand": "#3b82f6"
       }
     ]
   },
@@ -67,7 +72,8 @@
         "cost": 100000,
         "ownershipPercentage": 0.23,
         "impliedValue": 500000,
-        "founded": "2004-10-11"
+        "founded": "2004-10-11",
+        "brand": "#1d4ed8"
       },
       {
         "id": 7,
@@ -76,7 +82,8 @@
         "cost": 5000000,
         "ownershipPercentage": 0.29,
         "impliedValue": 7500000,
-        "founded": "2013-06-14"
+        "founded": "2013-06-14",
+        "brand": "#2563eb"
       },
       {
         "id": 8,
@@ -85,7 +92,8 @@
         "cost": 150000,
         "ownershipPercentage": 0.46,
         "impliedValue": 500000,
-        "founded": "2018-11-09"
+        "founded": "2018-11-09",
+        "brand": "#3b82f6"
       },
       {
         "id": 9,
@@ -94,7 +102,8 @@
         "cost": 600000,
         "ownershipPercentage": 0.02,
         "impliedValue": 1200000,
-        "founded": "2013-10-19"
+        "founded": "2013-10-19",
+        "brand": "#60a5fa"
       },
       {
         "id": 10,
@@ -103,7 +112,8 @@
         "cost": 360000,
         "ownershipPercentage": 0.28,
         "impliedValue": 780000,
-        "founded": "2005-09-05"
+        "founded": "2005-09-05",
+        "brand": "#bfdbfe"
       }
     ]
   }
