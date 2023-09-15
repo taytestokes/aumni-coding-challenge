@@ -2,22 +2,32 @@
   "name": "aumni-frontend-coding-challenge",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "check": "prettier --check",
+    "format": "prettier --write",
+    "lint": "eslint src"
+  },
   "dependencies": {
-    "@testing-library/react": "^12.1.2",
     "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run format && yarn run lint && git add -A ."
+    }
   },
   "browserslist": {
     "production": [
