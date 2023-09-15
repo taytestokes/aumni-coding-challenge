@@ -1,6 +1,6 @@
 import React from "react";
 import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate, useLocation, Navigate } from "react-router-dom";
 
 import aumniLogo from "../images/logo.png";
 
@@ -13,6 +13,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 
 const Authentication = () => {
   const navigate = useNavigate();
+  const { state } = useLocation();
   const { isAuthed, signIn } = useAuth();
   const { formData, formError, formLoading, handleInputChange, handleSubmit } =
     useForm(
@@ -22,7 +23,7 @@ const Authentication = () => {
       },
       () => {
         signIn(formData.username, formData.password);
-        navigate(paths.dashboard);
+        navigate(state?.path || paths.dashboard);
       },
     );
 
