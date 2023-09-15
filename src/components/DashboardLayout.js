@@ -1,13 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/20/solid";
+import { useNavigate } from "react-router-dom";
 
 import aumniLogo from "../images/logo.png";
+
+import { paths } from "../constants/Routes";
 
 import { useAuth } from "../hooks/useAuth";
 
 export const DashboardLayout = ({ children }) => {
   const { signOut } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOut();
+    navigate(paths.home);
+  };
 
   return (
     <main className="w-screen min-h-screen flex flex-col bg-gray-100 relative">
@@ -17,7 +26,7 @@ export const DashboardLayout = ({ children }) => {
           <button
             aria-label="Select to sign out"
             className="bg-gray-100 p-2 rounded-md border border-gray-200 text-gray-600"
-            onClick={signOut}
+            onClick={handleSignOut}
           >
             <ArrowRightOnRectangleIcon className="w-4 h-4" />
           </button>
