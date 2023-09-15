@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Hane and Sons Ventures",
+    "username": "HansAndSonsVentures",
+    "password": "Hans123"
+  },
+  {
+    "id": 2,
+    "name": "Windler Group",
+    "username": "WindlerGroup",
+    "password": "Windler123"
+  },
+  {
+    "id": 3,
+    "name": "Olson Ventures",
+    "username": "OlsenVentures",
+    "password": "Olsen123"
+  }
+]
