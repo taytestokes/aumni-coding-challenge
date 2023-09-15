@@ -49,7 +49,7 @@ export const PortfolioDonutChart = ({ data, height, width }) => {
         ))}
       </g>
 
-      {/* Text Group */}
+      {/* Portfolio Value Text */}
       <text
         textAnchor="middle"
         transform={`translate(${width / 2}, ${height / 2})`}

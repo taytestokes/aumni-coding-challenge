@@ -6,20 +6,55 @@
 * Creates custom classes
 */
 @layer components {
+  /* Donut Chart */
   .donut-chart .donut-arc {
     transition-duration: 0.3s;
     transition-property: opacity, transform;
     opacity: 1;
     cursor: pointer;
   }
-
   .donut-chart.highlighting .donut-arc {
     opacity: 0.75;
     transform: scale(0.95);
   }
-
   .donut-chart.highlighting .donut-arc:hover {
     opacity: 1;
     transform: scale(1);
+  }
+
+  /* Bar Chart */
+  .x-axis > path {
+    fill: none;
+    stroke: #d4d4d8;
+  }
+  .x-axis .tick > line {
+    fill: none;
+    stroke: none;
+  }
+  .x-axis .tick > text {
+    fill: #52525b;
+  }
+  .y-axis > path {
+    fill: none;
+    stroke: none;
+  }
+  .y-axis .domain {
+    display: none;
+  }
+  .y-axis .tick > line {
+    fill: none;
+    stroke: none;
+  }
+  .y-axis .tick > text {
+    fill: #52525b;
+  }
+  .y-grid > path {
+    fill: none;
+    stroke: none;
+  }
+  .y-grid .tick > line {
+    stroke: #e4e4e7;
+    stroke-dasharray: 6;
+    stroke-linecap: round;
   }
 }
