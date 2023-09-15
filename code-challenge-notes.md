@@ -1,9 +1,13 @@
-(\* required)
+# Full Name
 
-# Your Full Name\*
+Tayte Stokes
 
-# Email Address\*
+# Email Address
 
-# Date/Time Started\*
+taytestokes9328@gmail.com
+
+# Date/Time Started
+
+Friday, September 15 10:00am MT
 
 # Notes
