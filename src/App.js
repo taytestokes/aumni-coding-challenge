@@ -1,12 +1,24 @@
-import React from "react";
-import logo from "./images/logo.png";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+/**
+ * Using react lazy and suspense, we are code splitting the application on a per route basis.
+ * So we will only need to download the JS when that route is rendered.
+ */
+const Authentication = lazy(() => import("./pages/Authentication"));
+
+/**
+ * App is the shell of the application that will handle app wide configuration and routing.
+ */
 function App() {
   return (
-    <div style={{ textAlign: "center" }}>
-      <img src={logo} alt="Aumni Logo" />
-      <h1>Aumni Frontend Coding Challenge</h1>
-    </div>
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Authentication />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
