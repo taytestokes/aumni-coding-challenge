@@ -1,20 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { useAuth } from "../hooks/useAuth";
+import { useDimensions } from "../hooks/useDimensions";
 
 import { getBarChartData, getDonutChartData } from "../utils/Chart";
 
 import { DashboardLayout } from "../components/DashboardLayout";
 import { PortfolioDonutChart } from "../components/PortfolioDonutChart";
+import { PortfolioBarChart } from "../components/PortfolioBarChart";
+import { CompanyDrawer } from "../components/CompanyDrawer";
 
 import funds from "../mocks/funds.json";
-import { PortfolioBarChart } from "../components/PortfolioBarChart";
-import { useDimensions } from "../hooks/useDimensions";
 
 const Dashboard = () => {
   const { user } = useAuth();
 
   const [portfolio, setPortfolio] = useState();
+  const [activeCompany, setActiveCompany] = useState();
 
   const donutChartWrapperRef = useRef();
   const barChartWrapperRef = useRef();
@@ -47,16 +49,15 @@ const Dashboard = () => {
           <div className="p-2 border-b">
             <p className="font-semibold">Your Portfolio</p>
           </div>
-          <div
-            ref={donutChartWrapperRef}
-            className="flex flex-1 justify-center p-4"
-          >
-            {portfolio && (
-              <PortfolioDonutChart
-                data={donutChartData}
-                width={donutChartWidth}
-              />
-            )}
+          <div className="p-4">
+            <div ref={donutChartWrapperRef}>
+              {portfolio ? (
+                <PortfolioDonutChart
+                  data={donutChartData}
+                  width={donutChartWidth}
+                />
+              ) : null}
+            </div>
           </div>
         </div>
 
@@ -65,16 +66,22 @@ const Dashboard = () => {
             <p className="font-semibold">Your Investments</p>
           </div>
 
-          <div
-            ref={barChartWrapperRef}
-            className="flex flex-1 justify-center p-4"
-          >
-            {portfolio && (
-              <PortfolioBarChart data={barChartData} width={barChartWidth} />
-            )}
+          <div className="p-4">
+            <div ref={barChartWrapperRef}>
+              {portfolio ? (
+                <PortfolioBarChart data={barChartData} width={barChartWidth} />
+              ) : null}
+            </div>
           </div>
         </div>
       </section>
+
+      {activeCompany ? (
+        <CompanyDrawer
+          company={activeCompany}
+          onClose={() => setActiveCompany(null)}
+        />
+      ) : null}
     </DashboardLayout>
   );
 };

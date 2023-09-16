@@ -20,7 +20,7 @@ export const DashboardLayout = ({ children }) => {
 
   return (
     <main className="w-screen min-h-screen flex flex-col bg-white relative">
-      <header className="bg-white border-b">
+      <header className="bg-white border-b sticky top-0">
         <section className="flex items-center justify-between container mx-auto p-4">
           <img alt="Aumni Logo" src={aumniLogo} className="h-[24px]" />
           <button
