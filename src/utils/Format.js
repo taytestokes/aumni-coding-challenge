@@ -20,5 +20,5 @@ export const formatDate = (dateString) =>
 /**
  * Formats a decimal value to a percentage
  */
-export const formatPercentage = (decimalVal) =>
+export const formatDecimalToPercent = (decimalVal) =>
   `${Math.round(decimalVal * 100)}%`;

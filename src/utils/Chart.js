@@ -13,6 +13,23 @@ export const getDonutChartData = (portfolio) =>
   });
 
 /**
+ * Shapes the data that will be passed to the investment pie chart
+ */
+export const getPieChartData = (company) => {
+  const ownedValue = company.ownershipPercentage * company.impliedValue;
+  return [
+    {
+      color: "#e5e7eb",
+      value: company.impliedValue - ownedValue,
+    },
+    {
+      color: company.brand,
+      value: ownedValue,
+    },
+  ];
+};
+
+/**
  * Derives a dataset from the portfolio data to be used in the bar
  * chart display
  */
