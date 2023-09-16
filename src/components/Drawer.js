@@ -19,7 +19,7 @@ export const Drawer = ({ onClose, title, children }) => {
   useLayoutEffect(() => {
     // Sets drawer to active state aftter the initial render to trigger the transition
     // effects for the drawer
-    setIsActive(true);
+    setTimeout(() => setIsActive(true), 50);
     // Prevent the body from underneath the overlay from scrolling
     // if the content exceeds the viewport height
     document.querySelector("body").style.overflow = "hidden";
@@ -65,7 +65,7 @@ export const Drawer = ({ onClose, title, children }) => {
           ref={drawerRef}
           role="presentation"
         >
-          <div className="w-full bg-white flex p-4 border-b">
+          <div className="w-full bg-white flex items-center p-4 border-b">
             <button
               aria-label="Select to close the drawer"
               className="p-2 rounded-md border text-gray-600"
@@ -73,7 +73,7 @@ export const Drawer = ({ onClose, title, children }) => {
             >
               <ArrowLeftIcon className="w-4 h-4" />
             </button>
-            <h2 className="mx-auto font-bold text-gray-900">{title}</h2>
+            <h2 className="mx-auto font-semibold text-gray-900">{title}</h2>
           </div>
 
           <div className="box-border h-full bg-gray-100 p-4 pb-4 overflow-y-auto">
@@ -88,6 +88,6 @@ export const Drawer = ({ onClose, title, children }) => {
 
 Drawer.propTypes = {
   onClose: PropTypes.func,
-  title: PropTypes.title,
+  title: PropTypes.string,
   children: PropTypes.node,
 };

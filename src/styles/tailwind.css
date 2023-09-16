@@ -11,7 +11,6 @@
     transition-duration: 0.3s;
     transition-property: opacity, transform;
     opacity: 1;
-    cursor: pointer;
   }
   .donut-chart.highlighting .donut-arc {
     opacity: 0.75;
@@ -56,5 +55,17 @@
     stroke: #e4e4e7;
     stroke-dasharray: 6;
     stroke-linecap: round;
+  }
+
+  .bar-chart .bar {
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+    opacity: 1;
+  }
+  .bar-chart.highlighting .bar {
+    opacity: 0.75;
+  }
+  .bar-chart.highlighting .bar:hover {
+    opacity: 1;
   }
 }

@@ -55,6 +55,13 @@ const Dashboard = () => {
                 <PortfolioDonutChart
                   data={donutChartData}
                   width={donutChartWidth}
+                  onArcClick={(companyId) => {
+                    const company = portfolio?.companies.find(
+                      (company) => company.id === companyId,
+                    );
+
+                    setActiveCompany(company);
+                  }}
                 />
               ) : null}
             </div>
@@ -69,7 +76,17 @@ const Dashboard = () => {
           <div className="p-4">
             <div ref={barChartWrapperRef}>
               {portfolio ? (
-                <PortfolioBarChart data={barChartData} width={barChartWidth} />
+                <PortfolioBarChart
+                  data={barChartData}
+                  width={barChartWidth}
+                  onBarClick={(companyId) => {
+                    const company = portfolio?.companies.find(
+                      (company) => company.id === companyId,
+                    );
+
+                    setActiveCompany(company);
+                  }}
+                />
               ) : null}
             </div>
           </div>

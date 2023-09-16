@@ -5,14 +5,15 @@ import * as d3 from "d3";
 import { drawBarPath } from "../utils/Chart";
 
 const CHART_MARGINS = {
-  bottom: 25,
+  bottom: 3,
   left: 35,
   right: 0,
   top: 0,
 };
 
-export const PortfolioBarChart = ({ data, height, width }) => {
+export const PortfolioBarChart = ({ data, height, width, onBarClick }) => {
   const chartWrapperRef = useRef();
+  const chartRef = useRef();
   const xAxisRef = React.useRef();
   const yAxisRef = React.useRef();
   const yGridRef = React.useRef();
@@ -75,11 +76,13 @@ export const PortfolioBarChart = ({ data, height, width }) => {
   return (
     <section ref={chartWrapperRef}>
       <svg
+        ref={chartRef}
         data-testid="PortfolioBarChart"
         height={height}
         width={width}
         preserveAspectRatio="xMinYMin meet"
         xmlns="http://www.w3.org/2000/svg"
+        className="bar-chart"
       >
         {/* Y Axis Group */}
         <g
@@ -115,7 +118,16 @@ export const PortfolioBarChart = ({ data, height, width }) => {
             return (
               <path
                 key={datum.y + datum.x}
-                aria-label={`Select to view reviews with a rating of ${datum.x}`}
+                aria-hidden={onBarClick ? false : true}
+                aria-label={`Select to view details for ${datum.name}`}
+                role={onBarClick ? "button" : null}
+                onClick={() => onBarClick(datum.id)}
+                onKeyDown={(e) => {
+                  e.preventDefault();
+                  if (e.code === "Enter" || e.code === "Space") {
+                    onBarClick(datum.id);
+                  }
+                }}
                 fill={datum.brand}
                 d={drawBarPath({
                   height: barHeight,
@@ -124,6 +136,17 @@ export const PortfolioBarChart = ({ data, height, width }) => {
                   x: xScale(datum.x),
                   y: yScale(datum.y),
                 })}
+                onMouseEnter={() => {
+                  if (chartRef.current) {
+                    chartRef.current.classList.add("highlighting");
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (chartRef.current) {
+                    chartRef.current.classList.remove("highlighting");
+                  }
+                }}
+                className="bar"
               />
             );
           })}

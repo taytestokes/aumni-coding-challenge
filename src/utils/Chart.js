@@ -3,33 +3,14 @@
  * from the fund's companies data.
  */
 export const getDonutChartData = (portfolio) =>
-  portfolio?.companies.reduce((acc, company) => {
-    const ownedValue = company.ownershipPercentage * company.impliedValue;
-
-    // Total value is the sum of all owned value in every company
-    if (!acc["totalValue"]) {
-      acc["totalValue"] = ownedValue;
-    } else {
-      acc["totalValue"] += ownedValue;
-    }
-
-    // Save the owned value as individual data points to map to chart
-    if (!acc["dataPoints"]) {
-      acc["dataPoints"] = [ownedValue];
-    } else {
-      acc["dataPoints"].push(ownedValue);
-    }
-
-    // Save the companies brand to use for the color of the arc that
-    // represents the company
-    if (!acc["colors"]) {
-      acc["colors"] = [company.brand];
-    } else {
-      acc["colors"].push(company.brand);
-    }
-
-    return acc;
-  }, {});
+  portfolio?.companies.map((company) => {
+    return {
+      id: company.id,
+      color: company.brand,
+      name: company.name,
+      value: Math.round(company.ownershipPercentage * company.impliedValue),
+    };
+  });
 
 /**
  * Derives a dataset from the portfolio data to be used in the bar
@@ -38,6 +19,7 @@ export const getDonutChartData = (portfolio) =>
 export const getBarChartData = (portfolio) =>
   portfolio?.companies.map((company, index) => {
     return {
+      id: company.id,
       name: company.name,
       brand: company.brand,
       x: index,
