@@ -46,7 +46,7 @@ const Dashboard = () => {
 
       <section className="w-full flex flex-col md:flex-row gap-8 mt-8">
         <div className="flex flex-col border rounded-md md:w-1/2">
-          <div className="p-2 border-b">
+          <div className="p-2 border-b bg-gray-50">
             <p className="font-semibold">Your Portfolio</p>
           </div>
           <div className="p-4">
@@ -69,8 +69,8 @@ const Dashboard = () => {
         </div>
 
         <div className="flex flex-col border rounded-md md:w-1/2">
-          <div className="p-2 border-b">
-            <p className="font-semibold">Your Investments</p>
+          <div className="p-2 border-b bg-gray-50">
+            <p className="font-semibold">Investment Value Comparison</p>
           </div>
 
           <div className="p-4">

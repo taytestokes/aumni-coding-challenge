@@ -29,7 +29,7 @@ export const Drawer = ({ onClose, title, children }) => {
   }, []);
 
   return ReactDOM.createPortal(
-    <div
+    <aside
       className="fixed top-0 left-0 bottom-0 right-0 z-10"
       data-testid="drawer"
     >
@@ -45,7 +45,7 @@ export const Drawer = ({ onClose, title, children }) => {
           onDeactivate: setDrawerInactive,
         }}
       >
-        <div
+        <section
           className={`absolute top-0 right-0 bottom-0 z-30 transform transition-transform duration-200 ease-linear ${
             isActive ? "translate-x-0" : "translate-x-full"
           }  w-full sm:w-2/3 lg:w-1/3`}
@@ -65,7 +65,7 @@ export const Drawer = ({ onClose, title, children }) => {
           ref={drawerRef}
           role="presentation"
         >
-          <div className="w-full bg-white flex items-center p-4 border-b">
+          <header className="w-full bg-white flex items-center p-4 border-b">
             <button
               aria-label="Select to close the drawer"
               className="p-2 rounded-md border text-gray-600"
@@ -74,14 +74,14 @@ export const Drawer = ({ onClose, title, children }) => {
               <ArrowLeftIcon className="w-4 h-4" />
             </button>
             <h2 className="mx-auto font-semibold text-gray-900">{title}</h2>
-          </div>
+          </header>
 
-          <div className="box-border h-full bg-gray-100 p-4 pb-4 overflow-y-auto">
+          <div className="box-border h-full bg-white overflow-y-auto">
             {children}
           </div>
-        </div>
+        </section>
       </FocusTrap>
-    </div>,
+    </aside>,
     portalNode,
   );
 };

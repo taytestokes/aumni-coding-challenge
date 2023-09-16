@@ -76,7 +76,7 @@ export const PortfolioDonutChart = ({ data, height, width, onArcClick }) => {
 };
 
 PortfolioDonutChart.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
   height: PropTypes.number,
   width: PropTypes.number,
   onArcClick: PropTypes.func,
