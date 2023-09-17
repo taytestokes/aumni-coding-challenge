@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, act } from "../../setupTests";
+import { render, screen } from "../../setupTests";
 import userEvent from "@testing-library/user-event";
 
 import Authentication from "../Authentication";

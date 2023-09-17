@@ -30,7 +30,7 @@ export const PortfolioDonutChart = ({ data, height, width, onArcClick }) => {
           <path
             key={slice.value}
             aria-hidden={onArcClick ? false : true}
-            aria-label={`Select to view details for ${slice.data.name}`}
+            aria-label={`Select arc to view details for ${slice.data.name}`}
             role={onArcClick ? "button" : null}
             onClick={() => onArcClick(slice.data.id)}
             onKeyDown={(e) => {

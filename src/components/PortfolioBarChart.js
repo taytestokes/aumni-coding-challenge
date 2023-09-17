@@ -119,7 +119,7 @@ export const PortfolioBarChart = ({ data, height, width, onBarClick }) => {
               <path
                 key={datum.y + datum.x}
                 aria-hidden={onBarClick ? false : true}
-                aria-label={`Select to view details for ${datum.name}`}
+                aria-label={`Select bar to view details for ${datum.name}`}
                 role={onBarClick ? "button" : null}
                 onClick={() => onBarClick(datum.id)}
                 onKeyDown={(e) => {

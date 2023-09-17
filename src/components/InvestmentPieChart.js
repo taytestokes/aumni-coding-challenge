@@ -14,7 +14,7 @@ export const InvestmentPieChart = ({ data, height, width }) => {
   return (
     <svg
       role="image"
-      data-testid="DonutChart"
+      data-testid="InvestmentPieChart"
       ref={chartRef}
       height={height}
       width={width}

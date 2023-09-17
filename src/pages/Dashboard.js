@@ -15,8 +15,6 @@ import funds from "../mocks/funds.json";
 const Dashboard = () => {
   const { user } = useAuth();
 
-  console.log(user);
-
   const [portfolio, setPortfolio] = useState();
   const [activeCompany, setActiveCompany] = useState();
 

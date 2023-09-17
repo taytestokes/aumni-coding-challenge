@@ -25,7 +25,12 @@ export const CompanyDrawer = ({ company, onClose }) => {
     <Drawer title={company.name} onClose={onClose}>
       <div className="w-full flex justify-center p-4 bg-gray-50 border-b pb-8">
         <div className="flex border bg-white p-6 rounded-md ">
-          <img alt={`${company.name} logo`} src={company.logo} width={50} />
+          <img
+            alt={`${company.name} logo`}
+            src={company.logo}
+            width={50}
+            data-testid="company-logo"
+          />
         </div>
       </div>
 
@@ -35,21 +40,26 @@ export const CompanyDrawer = ({ company, onClose }) => {
             <p className="font-semibold">Company Information</p>
           </div>
           <div className="p-4">
-            <p className="text-xl font-semibold">{company.name}</p>
-            <p className="text-sm text-gray-600">
+            <p data-testid="company-title" className="text-xl font-semibold">
+              {company.name}
+            </p>
+            <p data-testid="founded-date" className="text-sm text-gray-600">
               Founded: {formatDate(company.founded)}
             </p>
 
             <div className="flex justify-between">
               <div>
                 <p className="font-semibold mt-4">Total Cost</p>
-                <p className="text-sm text-gray-600">
+                <p data-testid="company-cost" className="text-sm text-gray-600">
                   {currencyFormatter.format(company.cost)}
                 </p>
               </div>
               <div className="text-right">
                 <p className="font-semibold mt-4">Market Value</p>
-                <p className="text-sm text-gray-600">
+                <p
+                  data-testid="company-value"
+                  className="text-sm text-gray-600"
+                >
                   {currencyFormatter.format(company.impliedValue)}
                 </p>
               </div>
@@ -66,14 +76,20 @@ export const CompanyDrawer = ({ company, onClose }) => {
             <div className="flex justify-between">
               <div>
                 <p className="font-semibold">Owned %</p>
-                <p className="text-sm text-gray-600">
+                <p
+                  data-testid="company-percent-owned"
+                  className="text-sm text-gray-600"
+                >
                   {formatDecimalToPercent(company.ownershipPercentage)}
                 </p>
               </div>
 
               <div className="text-right">
                 <p className="font-semibold">Owned Value</p>
-                <p className="text-sm text-gray-600">
+                <p
+                  data-testid="company-owned-valued"
+                  className="text-sm text-gray-600"
+                >
                   {currencyFormatter.format(ownedValue)}
                 </p>
               </div>
