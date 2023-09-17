@@ -7,7 +7,7 @@ import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import PropTypes from "prop-types";
 import { render } from "@testing-library/react";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { AuthProvider } from "./providers/AuthProvider";
 
