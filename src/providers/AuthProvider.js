@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { AuthContext } from "../context/AuthContext";
 
-export const AuthProvider = ({ users, children }) => {
+export const AuthProvider = ({ users, values, children }) => {
   const [user, setUser] = useState();
 
   /**
@@ -73,6 +73,7 @@ export const AuthProvider = ({ users, children }) => {
         isAuthed,
         signIn,
         signOut,
+        ...values,
       }}
     >
       {children}
@@ -82,5 +83,10 @@ export const AuthProvider = ({ users, children }) => {
 
 AuthProvider.propTypes = {
   users: PropTypes.array.isRequired,
+  values: PropTypes.object,
   children: PropTypes.node.isRequired,
+};
+
+AuthProvider.defalutProps = {
+  values: {},
 };

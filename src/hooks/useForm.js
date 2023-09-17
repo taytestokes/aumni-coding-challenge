@@ -10,11 +10,9 @@ export const useForm = (initialSate = {}, submit = () => {}) => {
    * name property and value.
    */
   const handleInputChange = (evt) => {
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [evt.target.name]: evt.target.value,
-      };
+    setFormData({
+      ...formData,
+      [evt.target.name]: evt.target.value,
     });
   };
 
